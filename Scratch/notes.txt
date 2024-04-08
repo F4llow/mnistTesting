@@ -1,0 +1,22 @@
+so the prepareTD() shuld split the entire training dataset into a list of lists where each nested
+list.len() is equal to self.miniBatch
+
+each iteration of the for loop inside of prepareTD() shuld create new list with length self.miniBatch
+
+it shuld then instantly append this to self.trainingImages or self.trainingLabels, the desired list of lists
+
+so there r two things that can b inside of these nested lists, either the pillow Image object or the vector using numpy
+
+either way i will hav to use numpy to convert the pillow Image object into a vector so i think it wuld b better to put in the nested list, then its just a question of if numpy vector is a specific object, or a list
+
+im pretty sure its a list
+
+so then there will b the full list with nested lists equal in size to self.miniBatch and then nested lists inside of each of these with 784 elements
+
+it wuld look something like this (assume self.miniBatch = 2 and the entire dataset.len() = 4):
+
+(pretend that every 784 is actaully 784 different elements)
+
+[[[784], [784]], [[784], [784]]
+
+then wuld need to loop through this list of lists of lists for each epoch desired
